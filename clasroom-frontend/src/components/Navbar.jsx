@@ -1,13 +1,12 @@
 import React from "react";
 import AZLogo from "../assets/AZlogo.svg";
 
-function Navbar() {
+function Navbar({ onToggleSidebar }) {
   return (
-    <nav className="flex items-center justify-between md:mx-4 mt-4 px-4">
-      {/* Left Section (Hamburger Icon and Logo) */}
-      <div className="flex items-center space-x-3">
-        <button className="p-2">
-          {/* Hamburger Icon */}
+    <nav className="flex items-center justify-between md:mx-4 mt-4 px-4  relative">
+      <div className="flex items-center space-x-3 z-50">
+        {/* Hamburger Icon */}
+        <button className="p-2 z-50" onClick={onToggleSidebar}>
           <svg
             className="w-6 h-6 text-gray-700"
             fill="none"
@@ -22,13 +21,12 @@ function Navbar() {
           </svg>
         </button>
         <a href="/dashboard">
-          <img src={AZLogo} alt="AlgoZenith Logo" className="w-52 h-auto" />
+          <img src={AZLogo} alt="AlgoZenith Logo" className="w-48 h-auto " />
         </a>
       </div>
 
-      {/* Right Section (Buttons for Premium, Notification, and Avatar) */}
+      {/* Right Section (Notification and Avatar) */}
       <div className="flex items-center space-x-4 gap-3">
-        {/* Notification Icon */}
         <button className="p-2 bg-[#A4E6FF]/50 hover:bg-blue-200 transition rounded-md">
           <svg
             className="w-5 h-5 text-[#172B4D]"
@@ -37,12 +35,10 @@ function Navbar() {
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {" "}
             <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
           </svg>
         </button>
 
-        {/* User Avatar Icon */}
         <button className="p-2 rounded-full bg-gray-200">
           <span className="flex items-center justify-center w-8 h-8 bg-gray-300 rounded-full">
             <svg
