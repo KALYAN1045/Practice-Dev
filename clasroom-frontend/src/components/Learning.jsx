@@ -71,12 +71,12 @@ const Learning = () => {
               onClick={() => setSelectedChapter(chapter.id)}
               className={`w-full text-left p-3 rounded-lg mb-2 py-4 ${
                 selectedChapter === chapter.id
-                  ? "bg-blue-50 text-black"
+                  ? "bg-blue-50 text-black font-bold"
                   : "hover:bg-gray-50 text-gray-500"
               }`}
             >
               <div className="flex items-center justify-between">
-                <div className="font-bold">Chapter {chapter.id}</div>
+                <div>Chapter {chapter.id}</div>
                 <div className="flex items-center text-sm mt-1">
                   {selectedChapter === chapter.id && (
                     <Clock className="w-4 h-4 mr-1 text-[#608AD2]" />
@@ -84,7 +84,7 @@ const Learning = () => {
                   <span
                     className={
                       selectedChapter === chapter.id
-                        ? "text-[#608AD2]"
+                        ? "text-[#608AD2] font-normal"
                         : "hidden"
                     }
                   >
