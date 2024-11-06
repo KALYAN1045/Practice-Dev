@@ -57,7 +57,7 @@ const Learning = () => {
           >
             {courseData.chapters.map((chapter) => (
               <option key={chapter.id} value={chapter.id}>
-                Chapter {chapter.id}: {chapter.title}
+                Chapter {chapter.id}
               </option>
             ))}
           </select>
